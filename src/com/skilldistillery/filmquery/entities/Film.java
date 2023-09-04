@@ -160,11 +160,11 @@ public class Film {
 	}
 
 	public String userView() {
-		return "Title: " + title + "\n" + "Year: " + releaseYear + "\n" +"Rating: " + rating + "\n" + "Language: " + language + "\n" + "Description: " + desc + "\nActors:\n" + actorList();
+		return "Title: " + title + "\n" + "Year: " + releaseYear + "\n" +"Rating: " + rating + "\n" + "Language: " + language + "\n" + "Description: " + desc + "\nActors:\n" + listOfActors();
 				
 	}
 	
-	public String actorList() {
+	public String listOfActors() {
 		String actorNames = "";
 		for (Actor actor : actors) {
 			actorNames += actor.getFirstName() + " " + actor.getLastName() + "\n";
