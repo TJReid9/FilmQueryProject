@@ -4,12 +4,24 @@ import java.util.List;
 import java.util.Objects;
 
 public class Actor {
-	public int id;
+	private int id;
 	private String firstName;
 	private String lastName;
 	private List<Film> films;
+
+	public Actor( ) {}
 	
-	public Actor () {}
+	
+
+	public Actor(int id, String firstName, String lastName, List<Film> films) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.films = films;
+	}
+
+
 
 	public Actor(int id, String firstName, String lastName) {
 		super();
@@ -63,7 +75,7 @@ public class Actor {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(films, firstName, id, lastName);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -75,8 +87,7 @@ public class Actor {
 		if (getClass() != obj.getClass())
 			return false;
 		Actor other = (Actor) obj;
-		return Objects.equals(films, other.films) && Objects.equals(firstName, other.firstName) && id == other.id
-				&& Objects.equals(lastName, other.lastName);
+		return id == other.id;
 	}
 	
 	
