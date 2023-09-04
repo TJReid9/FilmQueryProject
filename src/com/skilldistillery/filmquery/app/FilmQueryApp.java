@@ -73,7 +73,7 @@ public class FilmQueryApp {
 			exit = true;
 			break;
 		default:
-			System.err.println("Invalid Input");
+			System.err.println("Invalid Option");
 			break;
 		}
 	}
