@@ -9,9 +9,10 @@ import com.skilldistillery.filmquery.database.DatabaseAccessorObject;
 import com.skilldistillery.filmquery.entities.Film;
 
 public class FilmQueryApp {
-	boolean exit;
-	Scanner sc = new Scanner(System.in);
+	Scanner kb = new Scanner(System.in);
 
+	boolean exit;
+	
 	DatabaseAccessor db = new DatabaseAccessorObject();
 
 	public static void main(String[] args) throws SQLException {
@@ -21,14 +22,14 @@ public class FilmQueryApp {
 
 	private void launch() throws SQLException {
 		startUserInterface();
-		sc.close();
+		kb.close();
 	}
 
 	private void startUserInterface() throws SQLException {
 		while (!exit) {
 			userMenu();
-			int choice = sc.nextInt();
-			sc.nextLine();
+			int choice = kb.nextInt();
+			kb.nextLine();
 
 			menuChoice(choice);
 		}
@@ -80,8 +81,8 @@ public class FilmQueryApp {
 
 	private Film filmByID() throws SQLException {
 		System.out.print("Enter Film ID: ");
-		int id = sc.nextInt();
-		sc.nextLine();
+		int id = kb.nextInt();
+		kb.nextLine();
 
 		return db.findFilmById(id);
 
@@ -89,7 +90,7 @@ public class FilmQueryApp {
 
 	private List<Film> filmsByKeyword() {
 		System.out.print("Enter Keyword: ");
-		String keyword = sc.nextLine();
+		String keyword = kb.nextLine();
 
 		return db.findFilmsByKeyword(keyword);
 
